@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/cubing-timer/static/css/main.b100e6da.chunk.css",
+    "main.js": "/cubing-timer/static/js/main.4a9e6542.chunk.js",
+    "main.js.map": "/cubing-timer/static/js/main.4a9e6542.chunk.js.map",
+    "runtime-main.js": "/cubing-timer/static/js/runtime-main.85a25ea6.js",
+    "runtime-main.js.map": "/cubing-timer/static/js/runtime-main.85a25ea6.js.map",
+    "static/js/2.0595c115.chunk.js": "/cubing-timer/static/js/2.0595c115.chunk.js",
+    "static/js/2.0595c115.chunk.js.map": "/cubing-timer/static/js/2.0595c115.chunk.js.map",
+    "index.html": "/cubing-timer/index.html",
+    "precache-manifest.301774af04c96a7ec2fbc2fbe594eaf4.js": "/cubing-timer/precache-manifest.301774af04c96a7ec2fbc2fbe594eaf4.js",
+    "service-worker.js": "/cubing-timer/service-worker.js",
+    "static/css/main.b100e6da.chunk.css.map": "/cubing-timer/static/css/main.b100e6da.chunk.css.map",
+    "static/media/logo.svg": "/cubing-timer/static/media/logo.25bf045c.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.85a25ea6.js",
+    "static/js/2.0595c115.chunk.js",
+    "static/css/main.b100e6da.chunk.css",
+    "static/js/main.4a9e6542.chunk.js"
+  ]
+}
