@@ -1,0 +1,19 @@
+footer{  padding: 0 10%;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color:#808080;
+  color: white;
+  text-align: center;
+  font-size: 10px;
+  display: flex;
+}
+footer a{
+  color:white;
+  background-color: #808080;
+}
+footer span{
+  color:white;
+  background-color: #808080;
+}

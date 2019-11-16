@@ -2,6 +2,7 @@ import React from 'react';
 import {Route,NavLink,HashRouter} from "react-router-dom";
 import './App.css';
 import Narbar from './narbar'
+import Footer from './footer'
 import TimerPage from '../containers/timerPage'
 
 
@@ -14,6 +15,7 @@ function App() {
         <Route exact path="/" component={TimerPage}/>
       </div>
       </HashRouter>
+      <Footer />
     </div>
   );
 }
