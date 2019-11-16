@@ -1,23 +1,27 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import {startTimer, stopTimer} from '../actions';
+import {startTimer, stopTimer,storeScramble} from '../actions';
 
+import {scramble,newScramble} from '../helpers/scrambleGenerator';
 import {getElaspedTime} from '../helpers/general'
 
 class TimerPage extends Component{
   constructor(){
     super()
     this.state={
-      displayTime:"0.00"
+      displayTime:"0.00",
+      displayScramble:null
     }
     this.spacePress = this.spacePress.bind(this)
   }
   //hear stop
   stopped(){
+    newScramble()
     this.setState({
       displayTime:getElaspedTime(
         this.props.timer.initTime,this.props.timer.endTime
-      )
+      ),
+      displayScramble:scramble
     })
   }
 
@@ -37,6 +41,9 @@ class TimerPage extends Component{
 
   componentDidMount(){
     document.addEventListener('keydown', this.spacePress);
+    newScramble()
+    this.props.dispatch(storeScramble(scramble));
+    this.setState({displayScramble:scramble})
   }
 
   componentWillUnmount() {
@@ -48,6 +55,7 @@ class TimerPage extends Component{
     return(
       <React.Fragment>
         {this.state.displayTime}
+        {this.state.displayScramble}
       </React.Fragment>
     )
   }
@@ -56,6 +64,7 @@ class TimerPage extends Component{
 function mapStateToProps(state) {
   return {
     timer: state.timer,
+    scramble:state.scramble
   }
 }
 export default connect(mapStateToProps)(TimerPage)
