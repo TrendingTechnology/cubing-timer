@@ -1,9 +1,9 @@
 import{ START_TIMER, STOP_TIMER} from '../actions'
 
 const initialState = {
-  initTime: 0,
-  endTime: 0,
-  stopped: undefined,
+  initTime: null,
+  endTime: null,
+  stopped: true,
 }
 
 function timer(state = [],action){
