@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import {startTimer, stopTimer,storeScramble} from '../actions';
 
 import {scramble,newScramble} from '../helpers/scrambleGenerator';
-import {getElaspedTime} from '../helpers/general'
+import {getElaspedTime,storingSolve} from '../helpers/general'
 
 class TimerPage extends Component{
   constructor(){
@@ -16,6 +16,7 @@ class TimerPage extends Component{
   }
   //hear stop
   stopped(){
+    storingSolve()
     newScramble()
     this.setState({
       displayTime:getElaspedTime(
@@ -27,14 +28,18 @@ class TimerPage extends Component{
 
   spacePress(e) {
     if(e.keyCode===32){
-      console.log(this.props.timer.stopped)
-      if(this.props.timer.stopped){
-        console.log("Start")
-        this.props.dispatch(startTimer())
+      if(this.props.timer.stopped == undefined){
+          console.log("Start")
+          this.props.dispatch(startTimer())
       }else{
-        console.log("Stop")
-        this.props.dispatch(stopTimer())
-        this.stopped()
+        if(this.props.timer.stopped){
+          console.log("Start")
+          this.props.dispatch(startTimer())
+        }else{
+          console.log("Stop")
+          this.props.dispatch(stopTimer())
+          this.stopped()
+        }
       }
     }
   }
