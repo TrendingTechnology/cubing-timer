@@ -9,7 +9,7 @@ const Narbar = props =>(
     <HashRouter>
       <NavLink exact to="/" className="py-2 d-none d-md-inline-block">Timer</NavLink>
       <span></span>
-      <NavLink exact to="/" className="py-2 d-none d-md-inline-block">Solves</NavLink>
+      <NavLink exact to="/listTimes" className="py-2 d-none d-md-inline-block">List Times</NavLink>
       <span></span>
       <NavLink exact to="/" className="py-2 d-none d-md-inline-block">Stats</NavLink>
       <span></span>
