@@ -4,7 +4,7 @@ const initialState = {
   scramble:null
 }
 
-function scramble(state = [],action){
+function scramble(state = initialState,action){
   switch(action.type){
   case STORE_SCRAMBLE:
     return {

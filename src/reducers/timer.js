@@ -1,4 +1,4 @@
-import{ START_TIMER, STOP_TIMER} from '../actions'
+import{ START_TIMER, STOP_TIMER,RESET_TIMER} from '../actions'
 
 const initialState = {
   initTime: null,
@@ -6,7 +6,7 @@ const initialState = {
   stopped: true,
 }
 
-function timer(state = [],action){
+function timer(state = initialState, action){
   switch(action.type){
     case START_TIMER:
       return {
@@ -19,7 +19,11 @@ function timer(state = [],action){
       return {
         ...state,
         endTime: action.time,
-        stopped:true
+      };
+    case RESET_TIMER:
+      return {
+        ...state,
+        stopped: true,
       };
     default:
       return state;
