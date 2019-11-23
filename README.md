@@ -1,68 +1,33 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Cubing Timer
 
-In the project directory, you can run:
+Casual Speedcubing Timer
 
-### `npm start`
+### Website Info
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+This website is currently in early development and aim to beable to work as a Offline Progress Web Apps (PWA). The website aim to provide a UI/UX friendly Speedcubing timer as alternative to the most common [csTimer](http://cstimer.net/) ([csTimer Github Page](https://github.com/cs0x7f/cstimer)).
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+***Current Feature (23/11/2019)***
+- Basic Timer
+- Basic Storage (indexedDB)
+- World Cube Association (WCA) cube Scambler inclusion (3x3 only)
 
-### `npm test`
+***In Development***
+- Complete other important element in timer (trigger/events)
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+***Up Coming***
+- UI/UX
+- Inspection Time
+- Other Statistic (eg: #solves per day, time-difference per day etc)
+- Time Trend
+- Stats (ao5, mo3, ao100 etc)
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Developer Additional Thought
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+This is just a project I created for myself to learn more about [ReactJs](https://reactjs.org/). I have previously started the project in June 2019 (hidden from Github at this point in time) but it was paused due to exams and other committements. This is a restucture of that project and reuse some components from previous project as well as what I have learnt to create a project with better file stucture as well as feature that I did not know exist back in the time.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+Finish product will unlikely as polish as [csTimer](http://cstimer.net/) or [Timiks](https://timiks.com/), but I will try my best, welcome to leaves any issues or give me suggestions :)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Good Luck Cubing :)  
