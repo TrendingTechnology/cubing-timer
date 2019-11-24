@@ -1,6 +1,5 @@
 import {Store, set , get} from 'idb-keyval';
 import store from '../store';
-import {scramble} from './scrambleGenerator'
 const sessions = new Store('Solves','Sessions');
 
 export function getElaspedTime(start,end){
@@ -21,7 +20,7 @@ export function msConvert(unConvertTime) {
   return timeString
 }
 
-export function storingSolve(){
+export async function storingSolve(scramble){
   var time = store.getState().timer.endTime-store.getState().timer.initTime
   var newRecord = [[[0,time],"Comments",scramble,Date.now()]]
   get('Sessions_01',sessions).then(val => {

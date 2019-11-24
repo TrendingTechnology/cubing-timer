@@ -1,7 +1,8 @@
-import{ STORE_SCRAMBLE } from '../actions'
+import{ STORE_SCRAMBLE,STORE_NEW_SCRAMBLE } from '../actions'
 
 const initialState = {
-  scramble:null
+  previousScramble:null,
+  preGeneratedScramble:null
 }
 
 function scramble(state = initialState,action){
@@ -9,7 +10,14 @@ function scramble(state = initialState,action){
   case STORE_SCRAMBLE:
     return {
       ...state,
-      scramble: action.scramble
+      previousScramble: action.payload,
+      preGeneratedScramble: action.payload
+    };
+  case STORE_NEW_SCRAMBLE:
+    return {
+      ...state,
+      previousScramble:state.preGeneratedScramble,
+      preGeneratedScramble: action.payload
     };
   default:
     return state;

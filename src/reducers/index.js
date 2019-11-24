@@ -3,8 +3,10 @@ import { combineReducers } from 'redux';
 
 import timer from './timer';
 import scramble from './scramble'
+import status from './status'
 
 export default combineReducers({
   timer,
   scramble,
+  status
 });

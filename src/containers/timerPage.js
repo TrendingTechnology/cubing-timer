@@ -1,61 +1,41 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import {startTimer, stopTimer,resetTimer,storeScramble} from '../actions';
-
-import {scramble,newScramble} from '../helpers/scrambleGenerator';
+import {startTimer, stopTimer,resetTimer,awaitForStart,storeScramble,spaceReset,storeNewScramble} from '../actions';
+import {newScramble} from '../helpers/scrambleGenerator';
 import {getElaspedTime,storingSolve} from '../helpers/general'
 
 class TimerPage extends Component{
   constructor(){
     super()
-    this.state={
-      displayTime:"0.00",
-      displayScramble:null
-    }
     this.spaceDown = this.spaceDown.bind(this)
     this.spaceUp = this.spaceUp.bind(this)
   }
-  //hear stop
-  stopped(){
-    storingSolve()
-    newScramble()
-    this.setState({
-      displayTime:getElaspedTime(
-        this.props.timer.initTime,this.props.timer.endTime
-      ),
-      displayScramble:scramble
-    })
-  }
+
+  //Space Bar Press down, trigger prepare/waiting for start
   spaceDown(e){
-    if(e.keyCode===32){
-      if(this.props.timer.stopped){
-        console.log("Waiting for Release")
-      }else if(this.props.timer.endTime !== new Date().getTime()){
-        console.log("Stop")
-        this.props.dispatch(stopTimer())
-        this.stopped()
+      if(e.keyCode===32){
+         //Prevent timer retrigger on release when just completed
+        if(this.props.status.spaceStatus){
+          console.log("Waiting for Release")
+          this.props.dispatch(awaitForStart())
       }
     }
   }
+
+  //Timer stopped and return to timer page, when space bar release, allow spaceDown to trigger again
   spaceUp(e) {
     if(e.keyCode===32){
-      if(this.props.timer.stopped){
-          console.log("Start")
-          this.props.dispatch(startTimer())
-      }else{
-        console.log("Reset")
-        this.props.dispatch(resetTimer())
-        // this.stopped()
-      }
+      this.props.dispatch(spaceReset())
     }
   }
 
   componentDidMount(){
     document.addEventListener('keydown', this.spaceDown);
     document.addEventListener('keyup', this.spaceUp);
-    newScramble()
-    this.props.dispatch(storeScramble(scramble));
-    this.setState({displayScramble:scramble})
+    //On initisation, fill in scramble and previous state.
+    if(this.props.scramble.previousScramble===null){
+      this.props.dispatch(storeScramble(newScramble()));
+    }
   }
 
   componentWillUnmount() {
@@ -64,10 +44,14 @@ class TimerPage extends Component{
   }
 
   render(){
+    const time = getElaspedTime(
+      this.props.timer.initTime,this.props.timer.endTime
+    );
+
     return(
       <React.Fragment>
-        {this.state.displayTime}
-        {this.state.displayScramble}
+        <div>{time}</div>
+        <div>{this.props.scramble.preGeneratedScramble}</div>
       </React.Fragment>
     )
   }
@@ -76,7 +60,8 @@ class TimerPage extends Component{
 function mapStateToProps(state) {
   return {
     timer: state.timer,
-    scramble:state.scramble
+    scramble:state.scramble,
+    status:state.status
   }
 }
 export default connect(mapStateToProps)(TimerPage)

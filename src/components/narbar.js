@@ -13,7 +13,7 @@ const Narbar = props =>(
       <span></span>
       <NavLink exact to="/" className="py-2 d-none d-md-inline-block">Stats</NavLink>
       <span></span>
-      <NavLink exact to="/" className="py-2 d-none d-md-inline-block">Options</NavLink>
+      <NavLink exact to="/stats" className="py-2 d-none d-md-inline-block">Options</NavLink>
       <span></span>
     </HashRouter>
   </div>
