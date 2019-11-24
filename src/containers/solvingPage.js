@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import {startTimer, stopTimer,resetTimer,awaitForStart,storeScramble,storeNewScramble} from '../actions';
+import {startTimer, stopTimer,resetTimer,storeNewScramble} from '../actions';
 
 import {msConvert,storingSolve} from '../helpers/general'
 import {newScramble} from '../helpers/scrambleGenerator';

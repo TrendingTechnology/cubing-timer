@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import {Route,NavLink,HashRouter} from "react-router-dom";
+import {Route,HashRouter} from "react-router-dom";
 import Narbar from '../components/narbar'
 import Footer from '../components/footer'
 import ListTimes from '../components/listTimes'

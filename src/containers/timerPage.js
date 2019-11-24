@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import {startTimer, stopTimer,resetTimer,awaitForStart,storeScramble,spaceReset,storeNewScramble} from '../actions';
+import {awaitForStart,storeScramble,spaceReset} from '../actions';
 import {newScramble} from '../helpers/scrambleGenerator';
-import {getElaspedTime,storingSolve} from '../helpers/general'
+import {getElaspedTime} from '../helpers/general'
 
 class TimerPage extends Component{
   constructor(){
