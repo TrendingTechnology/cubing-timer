@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import {Route,HashRouter} from "react-router-dom";
-import Narbar from '../components/narbar'
+// import {Route,HashRouter} from "react-router-dom";
+import GridLayout from 'react-grid-layout';
+
+// import Narbar from '../components/narbar'
 import Footer from '../components/footer'
 import ListTimes from '../components/listTimes'
 import TimerPage from './timerPage'
 import SolvingPage from './solvingPage'
+
+
 
 class AppContainer extends Component{
   constructor(){
@@ -17,13 +21,18 @@ class AppContainer extends Component{
     if(!this.props.status.focus){
       return (
         <div>
-          <HashRouter>
-          <Narbar />
-          <div className="content">
-            <Route exact path="/" component={TimerPage}/>
-            <Route exact path="/listTimes" component={ListTimes}/>
+          <GridLayout className="content layout" cols={12} width={1200}>
+          <div key="a" data-grid={{x: 0, y: 0, w: 4, h: 4, minW:4,minH:4}}>
+            <TimerPage />
           </div>
-          </HashRouter>
+          <div key="b" data-grid={{x: 0, y: 0, w: 4, h: 2, minW:4,minH:4}}>
+            <ListTimes />
+          </div>
+          <div key="c" data-grid={{x: 5, y: 5, w: 4, h: 2, minW:1,minH:1}}>
+            c
+          </div>
+
+          </GridLayout>
           <Footer />
         </div>
       );
