@@ -49,10 +49,10 @@ class TimerPage extends Component{
     );
 
     return(
-      <React.Fragment>
-        <div>{time}</div>
-        <div>{this.props.scramble.preGeneratedScramble}</div>
-      </React.Fragment>
+      <div className="timer-card">
+        <div className="time">{time}</div>
+        <div className="scramble">{this.props.scramble.preGeneratedScramble}</div>
+      </div>
     )
   }
 }

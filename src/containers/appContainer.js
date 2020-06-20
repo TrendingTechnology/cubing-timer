@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 // import {Route,HashRouter} from "react-router-dom";
 import { Responsive, WidthProvider } from 'react-grid-layout';
-
+import "../css/cards.css"
+import '../../node_modules/react-grid-layout/css/styles.css';
+import '../../node_modules/react-resizable/css/styles.css';
 // import Narbar from '../components/narbar'
 import Footer from '../components/footer'
 import ListTimes from '../components/listTimes'
@@ -47,13 +49,13 @@ class AppContainer extends Component{
             }
             {...this.props}
           >
-            <div key="a" data-grid={{x: 0, y: 0, w: 4, h: 2, minW:4,minH:2}}>
+            <div className="card" key="a" data-grid={{x: 0, y: 0, w: 4, h: 2, minW:4,minH:2}}>
               <TimerPage />
             </div>
-            <div key="b" data-grid={{x: 0, y: 0, w: 4, h: 2, minW:4,minH:4}}>
+            <div className="card" key="b" data-grid={{x: 0, y: 0, w: 4, h: 2, minW:4,minH:4}}>
               <ListTimes />
             </div>
-            <div key="c" data-grid={{x: 5, y: 5, w: 4, h: 2, minW:1,minH:1}}>
+            <div className="card"  key="c" data-grid={{x: 5, y: 5, w: 4, h: 2, minW:1,minH:1}}>
               c
             </div>
           </ResponsiveGridLayout>

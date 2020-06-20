@@ -1,0 +1,12 @@
+.card{
+  display:flex;
+  background-color:lightblue;
+}
+
+.timer-card .time{
+  font-size: 3em
+}
+
+.timer-card .scramble{
+  font-size: 2em
+}
