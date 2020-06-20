@@ -12,6 +12,7 @@ import SolvingPage from './solvingPage'
 const originalLayouts = getFromLS("layouts") || {};
 const ResponsiveGridLayout = WidthProvider(Responsive);
 
+
 class AppContainer extends Component{
   static defaultProps = {
     className:"layout",
